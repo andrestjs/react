@@ -1,0 +1,23 @@
+.nav{
+    padding:40px 0px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 50px;
+    background: #fff;
+}
+.nav__content{
+    display: flex;
+    justify-content: space-between;
+}
+.nav__menu{
+    display: flex;
+    list-style: none;
+}
+.nav__menu-link{
+    display: table;
+    margin-right: 40px;
+    color:#333;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+.nav__menu-link:hover{
+    color:peru;
+}
