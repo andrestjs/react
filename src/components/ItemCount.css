@@ -1,0 +1,35 @@
+.item-count{
+    display: table;
+    margin: auto;
+}
+
+.item-count__container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.item-count__num{
+    font-size: 30px;
+}
+
+.item-count__button{
+    font-size: 30px;
+}
+
+.item-count__add{
+    font-size: 25px;
+    width: 250px;
+    margin-top: 2px;
+}
+
+.item-count__button , .item-count__add{
+    border: none;
+    border-radius: 0;
+    outline: none;
+    padding: 15px;
+    transition: all .3s ease-in-out;
+}
+.item-count__button:active , .item-count__add:active{
+    transform: scale(.75);
+}
