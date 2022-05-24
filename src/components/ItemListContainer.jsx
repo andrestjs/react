@@ -1,17 +1,25 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { ItemCount } from './ItemCount'
+import { getProducts } from '../products'
+import { ItemList } from './ItemList';
 
 export const ItemListContainer = ({greeting}) => {
+
+  const [products,setProducts] = useState([]);
+
+  useEffect(()=>{
+    getProducts().then(res => setProducts(res))
+  },[])
 
   const onAdd = ( num ) => {
     if(num < 1) return
     alert(`Se agregaron ${num} items`)
   }
 
+
   return (
     <>
-      <div>{greeting}</div>
-      <ItemCount stock={5} initial={1} onAdd={onAdd}/>
+      <ItemList products={products} />
     </>
   )
 }
