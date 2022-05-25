@@ -37,3 +37,10 @@ export const getProducts = () => {
     })
 }
 
+export const getItem = (id) => {
+    return new Promise((res,rej) => {
+        setTimeout(()=>{
+            res(products.filter(prod => prod.id === id))
+        },2000)
+    })
+}
