@@ -1,7 +1,8 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import './Item.css'
-
-export const Item = ({title,description,price,pictureUrl}) => {
+import { ItemCount } from './ItemCount'
+export const Item = ({id,title,description,price,pictureUrl}) => {
 
   return (
     <div className='item'>
@@ -13,7 +14,9 @@ export const Item = ({title,description,price,pictureUrl}) => {
             <p className="item__description">{description}</p>
             <span className="item__price">s./{price}</span>
         </div>
-        <a href="#">Ver Producto</a>
+        <Link to={`/item/${id}`}>Ver Producto</Link>
+        <ItemCount stock={15} initial={1}  />
     </div>
+
   )
 }

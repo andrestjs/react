@@ -1,5 +1,7 @@
 .item-count{
-    display: table;
+    padding-top: 25px;
+    display: block;
+    width: 100%;
     margin: auto;
 }
 
@@ -19,7 +21,7 @@
 
 .item-count__add{
     font-size: 25px;
-    width: 250px;
+    width: 100%;
     margin-top: 2px;
 }
 
