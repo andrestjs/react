@@ -10,7 +10,7 @@ export const ItemCount = ( { stock , initial , onAdd } ) => {
       setCount( count => count + 1)
   }
   const decrementCount = () => {
-    if(count <= 0) return
+    if(count <= 1) return
       setCount( count => count - 1)
   }
 
