@@ -40,7 +40,7 @@ export const ItemDetail = ({id,title,description,price,pictureUrl}) => {
             ?
               <>
                 <h5 style={{color:'green',fontSize:'30px'}}>{`Se agregaron ${cantidad} ${title}`} </h5>
-                <div><Link to='/cart'>Ver Carrito</Link></div>
+                <div><Link to='/cart'>Terminar Compra</Link></div>
               </>
             :
               <ItemCount stock={25} initial={1} onAdd={onAdd}/>}
