@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import './Item.css'
-import { ItemCount } from './ItemCount'
+
 export const Item = ({id,title,description,price,pictureUrl}) => {
 
   return (
@@ -15,7 +15,6 @@ export const Item = ({id,title,description,price,pictureUrl}) => {
             <span className="item__price">s./{price}</span>
         </div>
         <Link to={`/item/${id}`}>Ver Producto</Link>
-        <ItemCount stock={15} initial={1}  />
     </div>
 
   )

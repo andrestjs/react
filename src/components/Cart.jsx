@@ -3,50 +3,31 @@ import { useContext } from 'react'
 import { Link } from 'react-router-dom'
 import { CartContext } from '../context/CartContext'
 import { CartItem } from './CartItem'
-import {addDoc, collection, orderBy} from 'firebase/firestore'
-import { db } from '../services/firebase'
-
+import './Cart.css'
 export const Cart = () => {
 
   const { cart ,getQuantity,getTotalPrice} = useContext(CartContext)
   let cantidad = getQuantity();
 
-  const createOrder = () => {
-    const orderObj = {
-      buyer : {
-        name : 'Andres Torres',
-        email : 'asda@gmail.com',
-        phone : 98765423,
-        address : 'Av siempre vivas 1231',
-        comment : 'Cerca de la casa verde'
-      },
-      items : cart,
-      total : getTotalPrice()
-    }
-
-    const collectionRef = collection(db,'orders')
-
-    addDoc(collectionRef,orderObj).then(res => {
-      console.log(`El id de la orden es ${res.id}`)
-    })
-  }
+  
 
   return (
     (cantidad > 0)
     ?
-    <div>
-      <ul>
+    <div className="container ">
+      <h1 style={{textAlign:"center",fontSize:"40px",marginBottom:"50px"}}>Detalle de Compra</h1>
+      <ul className='cart-item-container'>
         {
           cart.map(item => {
             return(<CartItem key={item.id} {...item}/>)
           })
         }
       </ul>
-      <p>s./{getTotalPrice()}</p>
-      <button onClick={createOrder}>Generar Orden</button>
+      <p style={{fontSize:"40px"}}>s./{getTotalPrice()}</p>
+      <Link to="/checkout" style={{}}>COMPRAR</Link>
     </div>
     :
-    <div>
+    <div className="container">
      <p>No hay Items agregados <Link to='/'>Volver a la tienda</Link></p>
     </div>
   )
