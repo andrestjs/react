@@ -113,7 +113,7 @@ export const Checkout = () => {
           type="email" id="confirmEmail" />
         </div>
         <div className="form-group">
-          <button disabled={!isValidForm } type="submit">Enviar</button>
+          <button disabled={!isValidForm } type="submit">Realizar Compra</button>
         </div>
       </form>
     </div>
